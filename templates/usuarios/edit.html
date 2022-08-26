@@ -1,0 +1,95 @@
+{% include 'header.html' %}
+
+{% for usuario in usuarios %}
+
+    <form method="post" action="/update" enctype="multipart/form-data">
+
+        <div class="card">
+            <div class="card-header">
+                Editar Datos del Usuario
+            </div>
+            <div class="card-body">
+                <p class="card-text">
+                    ID:
+                    <input type="text" name="txtId" id="txtId" value="{{usuario[0]}}">
+                    <br>
+
+                    <div class="form-group">
+                      <label for="txtNombre">Nombre</label>
+                      <input type="text" name="txtNombre" id="txtNombre" class="form-control" placeholder="" aria-describedby="helpId" value="{{usuario[1] }}">
+                      <small id="helpId" class="text-muted">Primer Nombre primera letra mayuscula Ej: Andres</small>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="txtApellido">Apellido</label>
+                      <input type="text" name="txtApellido" id="txtApellido" class="form-control" placeholder="" aria-describedby="helpId" value="{{usuario[2] }}">
+                      <small id="helpId" class="text-muted">Primer Apellido primera letra mayuscula Ej: Diaz</small>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="txtIden">Identificación</label>
+                      <input type="text" name="txtIden" id="txtIden" class="form-control" placeholder="" aria-describedby="helpId" value="{{usuario[3] }}">
+                      <small id="helpId" class="text-muted">Numeros de iddentificacion Ej: 1065124325</small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="txtFecha">Fecha de nacimiento</label>
+                        <input type="date" name="txtFecha" id="txtFecha" class="form-control" placeholder="" aria-describedby="helpId" value="{{usuario[4] }}">
+                        <small id="helpId" class="text-muted">dia/mes/año Ej: 12/01/1982 o 08/10/1991</small>
+                      </div>
+                    
+                      {% if "M" in usuario[5] %}
+                    <label for="txtGen">Genero</label>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="txtGen" id="txtGen" value="M" checked>
+                        Hombre
+                      </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="txtGen" id="txtGen" value="F">
+                        Mujer
+                      </label>
+                      <br>
+                      <small id="helpId" class="text-muted">Seleccione una de las opciones, Es sumamente necesario</small>
+                    </div>
+                    {% else %}
+                    <div class="form-check">
+                        <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="txtGen" id="txtGen" value="M">
+                        Hombre
+                      </label>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="txtGen" id="txtGen" value="F" checked>
+                        Mujer
+                      </label>
+                      <br>
+                      <small id="helpId" class="text-muted">Seleccione una de las opciones, Es sumamente necesario</small>
+                    </div>
+                    {% endif %}
+                    <br>
+    
+                    <div class="form-group">
+    
+                        <button type="submit" class="btn btn-success"value="Modificar">Modificar</button>
+                        <a href="{{url_for('index')}}" class="btn btn-primary" >Regresar</a>
+    
+                    </div>
+                    
+
+                </p>
+            </div>
+            
+        </div>
+
+        
+    
+    
+    </form>
+    
+
+{% endfor %}
+{% include 'footer.html' %}

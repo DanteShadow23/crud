@@ -1,0 +1,48 @@
+{% include 'header.html' %}
+<br/>
+<a href="{{url_for('create')}}" class="btn btn-success">
+
+    Ingresar nuevo Usuario
+
+</a>
+<br>
+<br>
+
+    <table class="table table-light">
+        <thead class="thead-light">
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Identificaión</th>
+                <th>Fecha de Nacimento</th>
+                <th>Genero</th>
+                <th>Acciones</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for usuario in usuarios %}
+            <tr>
+                <td>{{usuario[0] }}</td>
+                <td>{{usuario[1] }}</td>
+                <td>{{usuario[2] }}</td>
+                <td>{{usuario[3] }}</td>
+                <td>{{usuario[4] }}</td>
+                <td>{{usuario[5] }}</td>
+                <td>
+                    <a class="btn btn-warning" href="/edit/{{usuario[0]}}">Editar</a> 
+                    | 
+                    <a onclick="return confirm('¿Desea Borrar el Usuario?')" class="btn btn-danger" href="/destroy/{{usuario[0]}}">Eliminar</a>    
+                </td>
+            </tr>
+            {% endfor %}
+
+            
+
+
+        </tbody>
+    </table>
+
+{% include 'footer.html' %}

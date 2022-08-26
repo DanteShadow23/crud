@@ -3,6 +3,8 @@
 Conexion a PostgreSQL con python
 @Autor Dante
 """
+ 
+
 import psycopg2
 import json
 
@@ -17,3 +19,4 @@ try:
     conexion = psycopg2.connect(**credenciales)
 except psycopg2.Error as e:
     print("Ocurrió un erro al conectar a PostgrSQL: ", e)
+    

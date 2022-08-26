@@ -1,0 +1,84 @@
+{% include 'header.html' %}
+
+{% with messages= get_flashed_messages() %}
+
+{% if messages %}
+    <div class="alert alert-danger" role="alert">
+    {% for message in messages %}
+        {{ message }}
+    {% endfor %}
+    </div>
+{% endif %}
+
+{% endwith%}
+<br>
+<form method="post" action="/store" enctype="multipart/form-data">
+
+    <div class="card">
+        <div class="card-header">
+            Ingresar Datos del Usuario
+        </div>
+        <div class="card-body">
+            <p class="card-text">
+
+                <div class="form-group">
+                  <label for="txtNombre">Nombre</label>
+                  <input type="text" name="txtNombre" id="txtNombre" class="form-control" placeholder="" aria-describedby="helpId">
+                  <small id="helpId" class="text-muted">Primer Nombre primera letra mayuscula Ej: Andres</small>
+
+
+                </div>
+                <div class="form-group">
+                  <label for="txtApellido">Apellido</label>
+                  <input type="text" name="txtApellido" id="txtApellido" class="form-control" placeholder="" aria-describedby="helpId">
+                  <small id="helpId" class="text-muted">Primer Apellido primera letra mayuscula Ej: Diaz</small>
+                </div>
+
+                <div class="form-group">
+                  <label for="txtIden">Identificación</label>
+                  <input type="text" name="txtIden" id="txtIden" class="form-control" placeholder="" aria-describedby="helpId">
+                  <small id="helpId" class="text-muted">Numeros de iddentificacion Ej: 1065124325</small>
+                </div>
+
+                <div class="form-group">
+                  <label for="txtFecha">Fecha de nacimiento</label>
+                  <input type="date" name="txtFecha" id="txtFecha" class="form-control" placeholder="" aria-describedby="helpId">
+                  <small id="helpId" class="text-muted">dia/mes/año Ej: 12/01/1982 o 08/10/1991</small>
+                </div>
+
+                <div class="form-check">
+                    <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="txtGen" id="txtGen" value="M">
+                    Hombre
+                  </label>
+                </div>
+                <div class="form-check">
+                    <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="txtGen" id="txtGen" value="F">
+                    Mujer
+                  </label>
+                  <br>
+                  <small id="helpId" class="text-muted">Seleccione una de las opciones, Es sumamente necesario</small>
+                </div>
+                <br>
+
+                <div class="form-group">
+
+                    <button type="submit" class="btn btn-success" value="Agregar">Agregar</button>
+                    <a href="{{url_for('index')}}" class="btn btn-primary" >Regresar</a>
+
+                </div>
+                
+
+               
+
+            </p>
+        </div>
+    </div>
+
+
+
+
+</form>
+
+{% include 'footer.html' %}
