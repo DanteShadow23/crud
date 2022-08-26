@@ -13,10 +13,6 @@ sudo apt install libapache2-mod-python
 
 sudo apt install apache2
 ```
-# configurar mod_python:
-```
-    https://www.howtoforge.com/embedding-python-in-apache2-with-mod_python-debian-ubuntu-fedora-centos-mandriva-opensuse
-```
 # instalar flask:
 ```
 https://blog.desdelinux.net/tutorial-flask-basico/
