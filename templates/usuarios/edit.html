@@ -10,9 +10,12 @@
             </div>
             <div class="card-body">
                 <p class="card-text">
-                    ID:
-                    <input type="text" name="txtId" id="txtId" value="{{usuario[0]}}">
-                    <br>
+                    
+                    <div class="form-group">
+                      <label for="txtId"></label>
+                      <input type="text" name="txtId" id="txtId" class="form-control" placeholder="" aria-describedby="helpId" value="{{usuario[0]}}" readonly>
+                      <small id="helpId" class="text-muted">Numero de identificación del usuario</small>
+                    </div>
 
                     <div class="form-group">
                       <label for="txtNombre">Nombre</label>

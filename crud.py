@@ -46,7 +46,8 @@ def storage():
        _gen = request.form['txtGen']
 
     ingresar(_nom, _ape, _iden, _fecha, _gen)
-    return render_template('usuarios/index.html')
+    return redirect('/')
+
 
 @app.route('/destroy/<int:id>')
 def destroy(id):
